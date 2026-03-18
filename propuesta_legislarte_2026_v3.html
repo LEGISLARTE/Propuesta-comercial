@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Comercial 2026 · LEGISLARTE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --tl:#003E47;--tm:#00606C;--tl2:#004d5a;
+  --cr:#B8283C;--cr2:#8a1e2d;
+  --bg1:#E8F4F5;--bg2:#F9ECEE;--bg3:#FFF8EC;
+  --ff:'Arial',sans-serif;
+  --ctp:#1a1a1a;--cts:#555;
+  --cbp:#ffffff;--cbs:#f5f5f5;
+  --bdt:rgba(0,0,0,0.12);--bds:rgba(0,0,0,0.2);
+}
+body{font-family:var(--ff);background:#eaecea;padding:16px;min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:0 0 60px}
+
+.nav{display:flex;gap:3px;padding:10px 14px;background:var(--tl);border-radius:12px 12px 0 0;flex-wrap:wrap}
+.ntab{flex:1;min-width:72px;padding:7px 5px;border:none;background:transparent;color:rgba(255,255,255,0.58);font-size:11px;font-family:var(--ff);border-radius:5px;cursor:pointer;transition:all 0.2s;text-align:center}
+.ntab.act{background:rgba(255,255,255,0.18);color:#fff;font-weight:500}
+.ntab:hover:not(.act){background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.88)}
+
+.pane{background:#fff;border-radius:0 0 12px 12px;padding:32px 36px;min-height:520px;display:none}
+.pane.show{display:block;animation:fi 0.22s ease}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* COVER */
+.cover-inner{background:linear-gradient(155deg,var(--tl) 0%,#002a33 55%,#001820 100%);border-radius:10px;padding:44px 40px 36px;color:#fff;position:relative;overflow:hidden}
+.cover-bg{position:absolute;right:-20px;bottom:-50px;font-size:300px;opacity:0.04;pointer-events:none;user-select:none;line-height:1}
+.cover-stripe{position:absolute;top:0;right:0;width:5px;height:100%;background:var(--cr)}
+.logo-row{display:flex;align-items:center;gap:16px;margin-bottom:30px}
+.logo-img{height:52px;width:auto;object-fit:contain}
+.logo-vline{width:1px;height:40px;background:rgba(255,255,255,0.2)}
+.logo-sub{font-size:11px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;line-height:1.5}
+.ctag{display:inline-flex;align-items:center;gap:6px;background:rgba(184,40,60,0.22);border:0.5px solid rgba(184,40,60,0.45);color:#ffb3bf;font-size:10px;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:18px}
+.cover-title{font-size:38px;font-weight:400;line-height:1.1;color:#fff;margin-bottom:4px}
+.cover-year{font-size:62px;font-weight:500;color:var(--cr);line-height:1;margin:4px 0 26px}
+.cover-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:34px}
+.cpill{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.16);color:rgba(255,255,255,0.78);font-size:10px;padding:4px 11px;border-radius:20px}
+.cover-cta{display:inline-flex;align-items:center;gap:8px;background:var(--cr);color:#fff;border:none;padding:11px 22px;border-radius:7px;font-size:13px;font-family:var(--ff);cursor:pointer;transition:background 0.2s}
+.cover-cta:hover{background:var(--cr2)}
+.cover-foot{margin-top:26px;padding-top:14px;border-top:0.5px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.4)}
+.cover-foot span{color:rgba(255,255,255,0.72)}
+
+/* SECTION */
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.sh-num{width:32px;height:32px;background:var(--tl);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:500;flex-shrink:0}
+.sh-title{font-size:18px;font-weight:500;color:var(--tl)}
+.sh-div{height:2px;background:linear-gradient(90deg,var(--tl) 0%,transparent 100%);margin-bottom:20px}
+.nb{display:inline-flex;align-items:center;gap:7px;background:var(--tl);color:#fff;border:none;padding:10px 20px;border-radius:7px;font-size:12px;font-family:var(--ff);cursor:pointer;transition:background 0.2s;margin-top:22px;float:right}
+.nb:hover{background:var(--tl2)}
+.cf{clear:both}
+
+/* INTRO */
+.ibox{border-left:3px solid var(--tm);background:var(--bg1);border-radius:0 8px 8px 0;padding:13px 17px;margin-bottom:11px}
+.ibox p{font-size:13px;color:#444;line-height:1.78}
+.ib{font-weight:500;color:var(--tl)}
+.s3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.sc{border-radius:9px;padding:14px;text-align:center}
+.sc.t{background:var(--bg1)}.sc.c{background:var(--bg2)}
+.sv{font-size:25px;font-weight:500}.sv.t{color:var(--tm)}.sv.c{color:var(--cr)}
+.sl{font-size:10px;color:#888;margin-top:2px}
+
+/* LICENCIAS */
+.lic-intro{font-size:13px;color:#555;line-height:1.75;margin-bottom:16px;padding:13px 17px;background:var(--bg1);border-left:3px solid var(--tm);border-radius:0 8px 8px 0}
+.lic-intro strong{color:var(--tl)}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.mc{background:#fff;border:0.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:15px;cursor:pointer;transition:all 0.2s;border-top:3px solid transparent;position:relative}
+.mc:hover,.mc.op{border-top-color:var(--tm);background:var(--bg1)}
+.mi{font-size:19px;margin-bottom:7px}
+.mt{font-size:13px;font-weight:500;color:var(--tl);margin-bottom:4px}
+.ms{font-size:11px;color:#888;line-height:1.5}
+.ma{position:absolute;top:13px;right:13px;font-size:12px;color:var(--tm);transition:transform 0.2s}
+.mc.op .ma{transform:rotate(90deg)}
+.md{font-size:12px;color:#555;line-height:1.7;margin-top:10px;padding-top:10px;border-top:0.5px solid rgba(0,96,108,0.15);display:none}
+.md.show{display:block}
+
+/* SCOPE */
+.sl-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.si{display:flex;gap:11px;align-items:flex-start;padding:11px 14px;background:#fff;border:0.5px solid rgba(0,0,0,0.08);border-radius:8px}
+.si-d{width:20px;height:20px;background:var(--bg1);border:1.5px solid var(--tm);border-radius:50%;display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.si-d svg{width:9px;height:9px}
+.si-t{font-size:12px;color:#555;line-height:1.65}
+.si-t strong{color:var(--tl);font-weight:500}
+
+/* RESPONSABILIDADES */
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.rb{border-radius:9px;padding:15px}
+.rb.lg{background:var(--bg1);border:0.5px solid rgba(0,96,108,0.18)}
+.rb.cl{background:var(--bg2);border:0.5px solid rgba(184,40,60,0.18)}
+.rt{font-size:12px;font-weight:500;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.rt.t{color:var(--tl)}.rt.c{color:var(--cr)}
+.ri{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:11px;color:#555;line-height:1.55}
+.rb2{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.rb2.t{background:var(--tm)}.rb2.c{background:var(--cr)}
+
+/* DIAGNOSTICO */
+.diag{background:#fff;border:1.5px solid var(--tm);border-radius:10px;padding:20px;margin-top:14px}
+.dh{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.dic{width:38px;height:38px;background:var(--bg1);border-radius:8px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.dt{font-size:14px;font-weight:500;color:var(--tl)}
+.ds{font-size:11px;color:#888;margin-top:1px}
+.db{font-size:12px;color:#555;line-height:1.72;margin-bottom:13px}
+.db strong{color:var(--tl)}
+.dpr{display:flex;align-items:center;justify-content:space-between;background:var(--bg1);border-radius:8px;padding:11px 15px;margin-bottom:9px}
+.dpv{font-size:19px;font-weight:500;color:var(--tm)}
+.dpl{font-size:11px;color:#888}
+.dbon{background:var(--bg2);border-radius:7px;padding:10px 13px;font-size:11px;color:#555;line-height:1.65}
+.dbon strong{color:var(--cr)}
+
+/* HONORARIOS */
+.hh{background:var(--tl);border-radius:10px;padding:22px;text-align:center;margin-bottom:16px;color:#fff}
+.hl{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1.5px;margin-bottom:6px}
+.hv{font-size:36px;font-weight:500}
+.hi{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px}
+.p3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.pc{border-radius:9px;padding:14px;text-align:center;border:0.5px solid rgba(0,0,0,0.09);background:#fff}
+.ps{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--tl);color:#fff;border-radius:50%;font-size:10px;margin-bottom:7px}
+.pp{font-size:26px;font-weight:500;color:var(--tm)}
+.pv{font-size:12px;color:var(--cr);font-weight:500;margin:2px 0}
+.pw{font-size:10px;color:#888;line-height:1.5}
+
+/* EQUIPO */
+.tl-list{display:flex;flex-direction:column;gap:10px}
+.tc{display:flex;gap:14px;align-items:flex-start;background:#fff;border:0.5px solid rgba(0,0,0,0.08);border-radius:10px;padding:14px}
+.tav{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:500;flex-shrink:0;color:#fff}
+.tav.a{background:var(--tl)}.tav.b{background:var(--cr)}.tav.c{background:#1D9E75}.tav.d{background:#5F5E5A}
+.tn{font-size:13px;font-weight:500;color:var(--tl);margin-bottom:1px}
+.tr{font-size:10px;color:var(--cr);font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.tb{font-size:11px;color:#666;line-height:1.6}
+
+/* ACEPTAR */
+/* Selector de opción */
+.opt-sel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.opt-card{border:1.5px solid var(--bdt);border-radius:10px;padding:18px;cursor:pointer;transition:all 0.2s;background:#fff;position:relative}
+.opt-card:hover{border-color:var(--tm)}
+.opt-card.sel{border-color:var(--tm);background:var(--bg1)}
+.opt-card.sel2{border-color:var(--cr);background:var(--bg2)}
+.opt-radio{width:16px;height:16px;border-radius:50%;border:2px solid #ccc;display:inline-block;margin-right:8px;vertical-align:middle;transition:all 0.2s;flex-shrink:0}
+.opt-card.sel .opt-radio{background:var(--tm);border-color:var(--tm)}
+.opt-card.sel2 .opt-radio{background:var(--cr);border-color:var(--cr)}
+.opt-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.opt-ico{font-size:22px}
+.opt-title{font-size:14px;font-weight:500;margin-bottom:3px}
+.opt-card.sel .opt-title{color:var(--tl)}
+.opt-card.sel2 .opt-title{color:var(--cr)}
+.opt-desc{font-size:11px;color:#666;line-height:1.6}
+.opt-price{margin-top:10px;padding-top:10px;border-top:0.5px solid rgba(0,0,0,0.08);font-size:12px;font-weight:500}
+.opt-card.sel .opt-price{color:var(--tm)}
+.opt-card.sel2 .opt-price{color:var(--cr)}
+.opt-note{font-size:10px;color:#888;margin-top:3px}
+.opt-badge{position:absolute;top:-8px;right:12px;background:var(--cr);color:#fff;font-size:9px;padding:2px 8px;border-radius:10px;font-weight:500}
+
+/* Form */
+.fw{background:#fff;border:1px solid rgba(0,96,108,0.18);border-radius:10px;padding:22px;margin-bottom:14px}
+.ftitle{font-size:15px;font-weight:500;color:var(--tl);margin-bottom:16px}
+.frow{margin-bottom:11px}
+.flbl{display:block;font-size:11px;color:#888;margin-bottom:4px;font-weight:500}
+.fi{width:100%;padding:8px 11px;border:0.5px solid var(--bds);border-radius:6px;font-size:12px;font-family:var(--ff);color:var(--ctp);background:#fff}
+.fi:focus{outline:none;border-color:var(--tm);box-shadow:0 0 0 2px rgba(0,96,108,0.1)}
+.ck{display:flex;gap:9px;align-items:flex-start;padding:10px 13px;background:var(--bg1);border-radius:7px;cursor:pointer;margin-bottom:7px}
+.ck input[type=checkbox]{width:15px;height:15px;accent-color:var(--tm);margin-top:1px;flex-shrink:0;cursor:pointer}
+.ck-t{font-size:11px;color:#555;line-height:1.6}
+.ck-t strong{color:var(--tl)}
+.ck.cr-bg{background:var(--bg2)}
+.ck.cr-bg .ck-t strong{color:var(--cr)}
+.btn-ok{width:100%;padding:13px;background:var(--tl);color:#fff;border:none;border-radius:7px;font-size:14px;font-family:var(--ff);font-weight:500;cursor:pointer;transition:background 0.2s;margin-top:13px;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-ok:hover:not(:disabled){background:var(--tl2)}
+.btn-ok:disabled{opacity:0.32;cursor:not-allowed}
+.btn-cr{width:100%;padding:13px;background:var(--cr);color:#fff;border:none;border-radius:7px;font-size:14px;font-family:var(--ff);font-weight:500;cursor:pointer;transition:background 0.2s;margin-top:13px;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-cr:hover:not(:disabled){background:var(--cr2)}
+.btn-cr:disabled{opacity:0.32;cursor:not-allowed}
+
+/* Contrato */
+.contract-section{display:none}
+.contract-section.show{display:block;animation:fi 0.25s ease}
+.cs-head{text-align:center;padding:22px;background:var(--tl);border-radius:10px;color:#fff;margin-bottom:20px}
+.cs-icon{font-size:36px;margin-bottom:10px}
+.cs-title{font-size:18px;font-weight:500;margin-bottom:6px}
+.cs-sub{font-size:12px;color:rgba(255,255,255,0.6)}
+.contract-box{background:#fff;border:0.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:28px;margin-bottom:16px;font-size:12px;color:#444;line-height:1.8}
+.cb-title{font-size:14px;font-weight:500;color:var(--tl);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(0,96,108,0.15)}
+.cb-art{margin-bottom:14px}
+.cb-art-title{font-size:11px;font-weight:500;color:var(--tl);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px}
+.cb-art p{color:#555;line-height:1.75}
+.cb-art ul{padding-left:16px;margin-top:4px}
+.cb-art li{margin-bottom:3px;color:#555}
+.sign-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.sign-box{border-top:1.5px solid var(--tl);padding-top:10px}
+.sign-label{font-size:11px;font-weight:500;color:var(--tl);margin-bottom:4px}
+.sign-name{font-size:12px;color:#555}
+.sign-role{font-size:11px;color:#888}
+.payment-alert{background:var(--bg3);border:1.5px solid #d4a017;border-radius:10px;padding:18px;margin-bottom:16px}
+.pa-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.pa-icon{font-size:22px}
+.pa-title{font-size:14px;font-weight:500;color:#7a5c0a}
+.pa-body{font-size:12px;color:#5a4208;line-height:1.72}
+.pa-body strong{color:#5a3a00}
+.btn-mail{display:inline-flex;align-items:center;gap:7px;background:var(--cr);color:#fff;border:none;padding:11px 22px;border-radius:7px;font-size:13px;font-family:var(--ff);cursor:pointer;transition:background 0.2s;text-decoration:none}
+.btn-mail:hover{background:var(--cr2)}
+.steps-box{background:#fff;border-radius:8px;padding:14px;margin-bottom:14px;border:0.5px solid rgba(0,0,0,0.08)}
+.cstep{display:flex;gap:9px;align-items:flex-start;margin-bottom:9px;font-size:11px;color:#555}
+.cstep:last-child{margin-bottom:0}
+.csn{width:19px;height:19px;background:var(--tm);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:9px;flex-shrink:0;margin-top:1px}
+.csn.cr{background:var(--cr)}
+
+/* SHARED */
+.note{background:var(--bg2);border-left:3px solid var(--cr);border-radius:0 7px 7px 0;padding:10px 14px;margin-top:11px;font-size:11px;color:#555;line-height:1.6}
+.note strong{color:var(--cr)}
+.warn{background:#fffbea;border-left:3px solid #d4a017;border-radius:0 7px 7px 0;padding:10px 14px;margin-top:9px;font-size:11px;color:#555;line-height:1.6}
+.warn strong{color:#8a6200}
+.info{background:var(--bg1);border-left:3px solid var(--tm);border-radius:0 7px 7px 0;padding:10px 14px;margin-top:9px;font-size:11px;color:#555;line-height:1.6}
+.info strong{color:var(--tl)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="nav">
+  <button class="ntab act"  onclick="gp('cover')">Portada</button>
+  <button class="ntab"      onclick="gp('intro')">Presentación</button>
+  <button class="ntab"      onclick="gp('licencia')">Licencia</button>
+  <button class="ntab"      onclick="gp('alcance')">Alcance</button>
+  <button class="ntab"      onclick="gp('resp')">Responsabilidades</button>
+  <button class="ntab"      onclick="gp('honorarios')">Honorarios</button>
+  <button class="ntab"      onclick="gp('equipo')">Equipo</button>
+  <button class="ntab"      onclick="gp('aceptar')">Aceptar</button>
+</div>
+
+<!-- ══════════ PORTADA ══════════ -->
+<div id="pg-cover" class="pane show">
+  <div class="cover-inner">
+    <div class="cover-bg">🌿</div>
+    <div class="cover-stripe"></div>
+    <div class="logo-row">
+      <img src="data:image/png;base64,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" class="logo-img" alt="LEGISLARTE">
+      <div class="logo-vline"></div>
+      <div class="logo-sub">Asesoría Legal y Regulatoria<br>Cannabis Medicinal · Colombia</div>
+    </div>
+    <div class="ctag">&#9679; Decreto 811 de 2021</div>
+    <div class="cover-title"><strong>Propuesta Comercial</strong></div>
+    <div class="cover-year">2026</div>
+    <div class="cover-pills">
+      <div class="cpill">Fines Industriales</div>
+      <div class="cpill">Investigación</div>
+      <div class="cpill">Fabricación de Derivados</div>
+      <div class="cpill">Exportación</div>
+    </div>
+    <button class="cover-cta" onclick="gp('intro')">
+      Ver propuesta completa
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M6.5 2.5l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="cover-foot">
+      <span>Luisa María Patiño Marulanda</span> &nbsp;·&nbsp; luisa@legislarte.co &nbsp;·&nbsp; 314 648 5794
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PRESENTACIÓN ══════════ -->
+<div id="pg-intro" class="pane">
+  <div class="sh"><div class="sh-num">01</div><div class="sh-title">Presentación</div></div>
+  <div class="sh-div"></div>
+  <div class="ibox"><p>Agradecemos su confianza en <span class="ib">LEGISLARTE</span>. Nos comprometemos a representarlos con total profesionalismo, rigor técnico y claridad jurídica en cada etapa del proceso de licenciamiento ante el Ministerio de Justicia y del Derecho.</p></div>
+  <div class="ibox"><p>La industria del cannabis medicinal en Colombia es <span class="ib">el mercado del oro verde</span>: un ecosistema regulado y creciente con aplicaciones en farmacéutica, materias primas, derivados, cosméticos, alimentos e industria. Colombia cuenta con vocación exportadora y un marco normativo sólido bajo el <span class="ib">Decreto 811 de 2021</span>.</p></div>
+  <div class="ibox"><p><span class="ib">LEGISLARTE</span> acumula más de 10 años de trayectoria en el sector. Nuestro equipo interdisciplinario —legal, técnico y agronómico— ha acompañado exitosamente la totalidad de los procesos de licenciamiento que nuestros clientes nos han confiado, ofreciendo soluciones prácticas y acompañamiento permanente en cada decisión.</p></div>
+  <div class="ibox"><p>La presente propuesta tiene por objeto el acompañamiento para la obtención de <span class="ib">una (1) licencia de cultivo de plantas de cannabis psicoactivo</span>, en cuatro modalidades, por primera vez, conforme al Decreto 811 de 2021 y demás normas concordantes.</p></div>
+  <div class="s3">
+    <div class="sc t"><div class="sv t">10+</div><div class="sl">años en el sector</div></div>
+    <div class="sc c"><div class="sv c">100%</div><div class="sl">licencias obtenidas</div></div>
+    <div class="sc t"><div class="sv t">4</div><div class="sl">modalidades en esta licencia</div></div>
+  </div>
+  <button class="nb" onclick="gp('licencia')">Ver licencia →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ LICENCIA ══════════ -->
+<div id="pg-licencia" class="pane">
+  <div class="sh"><div class="sh-num">02</div><div class="sh-title">Licencia a Obtener</div></div>
+  <div class="sh-div"></div>
+  <div class="lic-intro">
+    Se gestionará la obtención de <strong>una (1) licencia de cultivo de plantas de cannabis psicoactivo con fines medicinales</strong>, que comprende las siguientes <strong>cuatro (4) modalidades simultáneas</strong>. Cada modalidad amplía el alcance operativo de la misma licencia; no constituyen licencias independientes. La solicitud se presenta por primera vez ante la Subdirección de Control y Fiscalización de Sustancias Químicas y Estupefacientes del Ministerio de Justicia y del Derecho.
+  </div>
+  <p style="font-size:11px;color:#999;margin-bottom:12px">Selecciona cada tarjeta para ver la descripción regulatoria de la modalidad.</p>
+  <div class="mg">
+    <div class="mc" onclick="tm(this,'md1')"><span class="ma">›</span><div class="mi">🏭</div><div class="mt">Modalidad 1 · Fines Industriales</div><div class="ms">Cultivo hasta entrega del componente vegetal para usos industriales.</div><div class="md" id="md1">Comprende el cultivo de plantas de cannabis psicoactivo desde la siembra hasta la entrega o uso del componente vegetal con destino a usos industriales, sin que implique actividades de fabricación de derivados. Incluye: importación o adquisición de semillas, siembra, cosecha, postcosecha, almacenamiento, comercialización, transporte, distribución, exportación y disposición final.</div></div>
+    <div class="mc" onclick="tm(this,'md2')"><span class="ma">›</span><div class="mi">🔬</div><div class="mt">Modalidad 2 · Investigación</div><div class="ms">Cultivo con propósitos científicos sobre la planta o sus partes.</div><div class="md" id="md2">Comprende el cultivo con propósitos científicos, sin implicar fabricación de derivados salvo para cuantificación de metabolitos y análisis de control de calidad. Incluye: importación de semillas, siembra, cosecha, postcosecha, almacenamiento, posesión, exportación, transporte y disposición final con fines científicos.</div></div>
+    <div class="mc" onclick="tm(this,'md3')"><span class="ma">›</span><div class="mi">⚗️</div><div class="mt">Modalidad 3 · Fabricación de Derivados</div><div class="ms">Cultivo para entrega de flor a un licenciatario de fabricación.</div><div class="md" id="md3">Comprende el cultivo para entrega de flor a un licenciatario de fabricación de derivados. Incluye adquisición, importación, almacenamiento, posesión, disposición final y transporte de la flor entregada a la licencia de fabricación de derivados.</div></div>
+    <div class="mc" onclick="tm(this,'md4')"><span class="ma">›</span><div class="mi">🌍</div><div class="mt">Modalidad 4 · Exportación</div><div class="ms">Cultivo desde siembra hasta cosecha para exportación internacional.</div><div class="md" id="md4">Comprende el cultivo desde la siembra hasta la cosecha con destino a la exportación de cannabis psicoactivo, plantas de cannabis psicoactivo y/o componente vegetal.</div></div>
+  </div>
+  <div class="note"><strong>Alcance:</strong> Esta propuesta cubre el acompañamiento desde la constitución de la sociedad hasta la <strong>emisión del acto administrativo por parte del Ministerio de Justicia y del Derecho</strong>. Actuaciones posteriores —solicitudes de cupos de siembra, modificaciones, renovaciones, recursos— no están incluidas y deberán cotizarse por separado.</div>
+  <button class="nb" onclick="gp('alcance')">Ver alcance →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ ALCANCE ══════════ -->
+<div id="pg-alcance" class="pane">
+  <div class="sh"><div class="sh-num">03</div><div class="sh-title">Alcance del Servicio</div></div>
+  <div class="sh-div"></div>
+  <ul class="sl-list">
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Constitución de la sociedad a licenciar:</strong> elaboración de estatutos adaptados a los requisitos del Decreto 811 de 2021 y los exigidos por la Cámara de Comercio, el Ministerio de Justicia y el Invima para el ejercicio de actividades de cannabis. El objeto social y la estructura estatutaria quedarán diseñados para el desarrollo de las actividades propias de la licencia, previendo rondas de inversión e ingreso de socios. No incluye acompañamiento contable ni asesoría financiera. Obtención de RUES y RUT con las responsabilidades requeridas.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Creación del perfil de la empresa en el MICC:</strong> registro y configuración del perfil de la empresa en el Módulo de Información y Control de Cannabis (MICC), plataforma tecnológica del Ministerio de Justicia para la gestión de licencias de cannabis.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Carga de información y documentación en el MICC:</strong> cargue de todos los documentos, formularios e información técnica requeridos por la plataforma para el trámite de la licencia.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Radicación formal de la solicitud:</strong> presentación de la solicitud de licencia a través de los medios y canales exigidos por la normativa vigente, incluyendo la verificación de requisitos previos a la radicación.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Elaboración de documentos legales:</strong> declaraciones juramentadas, contratos, certificaciones, documento de vinculación del director técnico y de delegación del suplente, y demás documentos exigidos por la regulación vigente.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Contestación a requerimientos:</strong> atención y respuesta a todos los requerimientos que el Ministerio de Justicia y del Derecho formule dentro del trámite de la licencia cotizada.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Acompañamiento en mesas técnicas:</strong> participación y apoyo al contratante en las mesas técnicas o reuniones de verificación que el Ministerio convoque en el marco del trámite de la presente licencia.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Estudio de títulos inmobiliarios:</strong> análisis jurídico del predio donde se desarrollarán las actividades, orientado a identificar limitaciones al dominio, gravámenes, embargos, afectaciones de comunidades u otras circunstancias que incidan en la viabilidad del licenciamiento. Si el solicitante no es propietario, se elabora el documento que acredita el vínculo jurídico con el inmueble.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Descripción técnica de infraestructura:</strong> elaboración del informe de equipos y zonas de procesos con medidas, dimensiones y registros fotográficos, conforme a los requerimientos del Ministerio.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Protocolo de seguridad:</strong> elaboración del protocolo de seguridad para las instalaciones de cannabis psicoactivo conforme a la regulación técnica vigente.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Plan de cultivo proyectado a un año:</strong> cronograma de trabajo, organigrama con responsabilidades, procedimientos agrícolas, estimación de semillas y plantas, procedencia y forma de acceso a semillas, y especificaciones técnicas de materiales de siembra.</div></li>
+    <li class="si"><div class="si-d"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.2 2.2L7.5 2" stroke="#00606C" stroke-width="1.4" stroke-linecap="round"/></svg></div><div class="si-t"><strong>Proyecto de investigación y Plan de exportación:</strong> elaboración de los documentos exigidos para las modalidades de investigación y exportación respectivamente.</div></li>
+  </ul>
+  <div class="note"><strong>No incluye:</strong> solicitudes de cupos de siembra, modificaciones de la licencia, renovaciones, recursos administrativos, acompañamiento contable o financiero, ni ningún trámite distinto al expresamente cotizado. Cualquier actuación adicional deberá ser cotizada de forma separada antes de su inicio.</div>
+  <button class="nb" onclick="gp('resp')">Responsabilidades →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ RESPONSABILIDADES ══════════ -->
+<div id="pg-resp" class="pane">
+  <div class="sh"><div class="sh-num">04</div><div class="sh-title">Responsabilidades de las Partes</div></div>
+  <div class="sh-div"></div>
+  <p style="font-size:12px;color:#666;margin-bottom:14px;line-height:1.7">El éxito del proceso de licenciamiento depende del cumplimiento coordinado de las obligaciones de ambas partes.</p>
+  <div class="rg">
+    <div class="rb lg">
+      <div class="rt t">◼ LEGISLARTE se compromete a:</div>
+      <div class="ri"><div class="rb2 t"></div><div>Gestionar la solicitud de licencia con diligencia y con sujeción a la normativa vigente, representando los intereses del contratante ante el Ministerio de Justicia.</div></div>
+      <div class="ri"><div class="rb2 t"></div><div>Elaborar los documentos legales, técnicos y administrativos requeridos, en los términos del alcance.</div></div>
+      <div class="ri"><div class="rb2 t"></div><div>Mantener informado al contratante sobre el estado del trámite y requerir oportunamente la información necesaria.</div></div>
+      <div class="ri"><div class="rb2 t"></div><div>Atender los requerimientos del Ministerio dentro del trámite de la licencia cotizada.</div></div>
+      <div class="ri"><div class="rb2 t"></div><div>Guardar la más estricta confidencialidad sobre la información del contratante y del proceso.</div></div>
+    </div>
+    <div class="rb cl">
+      <div class="rt c">◼ El Contratante se obliga a:</div>
+      <div class="ri"><div class="rb2 c"></div><div>Suministrar información <strong>completa, oportuna, veraz y de origen lícito</strong> en respuesta a cada requerimiento. La demora o inexactitud puede afectar los plazos, sin que sea imputable a LEGISLARTE.</div></div>
+      <div class="ri"><div class="rb2 c"></div><div>Garantizar que el <strong>predio a licenciar está libre de gravámenes</strong>, hipotecas, embargos u otras afectaciones jurídicas que comprometan el dominio o la posesión.</div></div>
+      <div class="ri"><div class="rb2 c"></div><div>Certificar que el predio <strong>no se encuentra en áreas de restricción legal</strong> (parques naturales, reservas, resguardos, zonas de exclusión regulatoria).</div></div>
+      <div class="ri"><div class="rb2 c"></div><div>Verificar que el <strong>uso de suelo del predio permite el cultivo</strong> conforme al POT o instrumento de planeación aplicable.</div></div>
+      <div class="ri"><div class="rb2 c"></div><div>Realizar los pagos en los términos y momentos establecidos. El incumplimiento puede dar lugar a la suspensión del servicio.</div></div>
+    </div>
+  </div>
+  <div class="warn"><strong>Advertencia:</strong> El incumplimiento de las obligaciones del contratante —en particular las relativas al predio— puede generar el rechazo de la solicitud por parte del Ministerio, sin que ello sea responsabilidad de LEGISLARTE ni implique el reembolso de los honorarios correspondientes a etapas ya ejecutadas.</div>
+
+  <div class="diag">
+    <div class="dh">
+      <div class="dic">🔍</div>
+      <div><div class="dt">Diagnóstico de Viabilidad del Predio</div><div class="ds">Servicio adicional opcional · Previo al inicio del proceso de licenciamiento</div></div>
+    </div>
+    <div class="db">Si el contratante requiere certeza sobre la viabilidad jurídica y técnica del predio <strong>antes de iniciar el proceso de licenciamiento</strong>, LEGISLARTE ofrece un diagnóstico integral previo que evalúa: uso de suelo, ausencia de restricciones legales, estado de gravámenes y condiciones técnicas mínimas para el licenciamiento bajo el Decreto 811 de 2021. El resultado es un informe escrito con conclusiones y recomendaciones.</div>
+    <div class="dpr">
+      <div><div class="dpl">Valor del diagnóstico</div><div class="dpv">$6.000.000 + IVA</div></div>
+      <div style="font-size:11px;color:#888;text-align:right;max-width:200px">Pago anticipado · Entrega de informe escrito</div>
+    </div>
+    <div class="dbon"><strong>Beneficio:</strong> Si el predio resulta <strong>viable</strong> y el contratante inicia el proceso de licenciamiento con LEGISLARTE dentro de los <strong>cinco (5) meses</strong> siguientes a la entrega del informe, el valor pagado por el diagnóstico se <strong>descuenta del primer pago</strong> de la propuesta de licenciamiento.</div>
+  </div>
+  <button class="nb" onclick="gp('honorarios')">Ver honorarios →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ HONORARIOS ══════════ -->
+<div id="pg-honorarios" class="pane">
+  <div class="sh"><div class="sh-num">05</div><div class="sh-title">Honorarios</div></div>
+  <div class="sh-div"></div>
+  <div class="hh">
+    <div class="hl">HONORARIOS TOTALES · PROCESO DE LICENCIAMIENTO</div>
+    <div class="hv">$40.000.000</div>
+    <div class="hi">+ IVA &nbsp;·&nbsp; Pagaderos en tres cuotas según hitos del proceso</div>
+  </div>
+  <div class="p3">
+    <div class="pc"><div class="ps">1</div><div class="pp">50%</div><div class="pv">$20.000.000 + IVA</div><div class="pw">Al aprobarse la propuesta comercial</div></div>
+    <div class="pc"><div class="ps">2</div><div class="pp">25%</div><div class="pv">$10.000.000 + IVA</div><div class="pw">Al radicar la solicitud ante el Ministerio de Justicia</div></div>
+    <div class="pc"><div class="ps">3</div><div class="pp">25%</div><div class="pv">$10.000.000 + IVA</div><div class="pw">Al emitirse el acto administrativo por el Ministerio de Justicia</div></div>
+  </div>
+  <div class="info"><strong>Modelo de pago por hitos:</strong> los pagos están alineados con los avances verificables del proceso. Los honorarios cubren exclusivamente el alcance descrito y no incluyen costos de notaría, registro, tasas gubernamentales ni gastos de terceros, que son asumidos directamente por el contratante.</div>
+  <div class="warn" style="margin-top:10px"><strong>Actuaciones adicionales:</strong> cualquier trámite posterior a la emisión del acto administrativo de adjudicación —cupos de siembra, modificaciones, renovaciones, recursos— constituye una actuación independiente y deberá cotizarse de forma separada antes de su inicio.</div>
+  <button class="nb" onclick="gp('equipo')">Ver equipo →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ EQUIPO ══════════ -->
+<div id="pg-equipo" class="pane">
+  <div class="sh"><div class="sh-num">06</div><div class="sh-title">Equipo de Trabajo</div></div>
+  <div class="sh-div"></div>
+  <div class="tl-list">
+    <div class="tc"><div class="tav a">LM</div><div><div class="tn">Luisa María Patiño Marulanda</div><div class="tr">Directora Legal · LEGISLARTE</div><div class="tb">Abogada con más de 8 años de presencia en la industria del cannabis en Colombia. Experta en regulación, gestión y tramitación de proyectos de Cannabis Medicinal e Industrial ante el Ministerio de Justicia, Ministerio de Salud e Invima. Ha tramitado exitosamente licencias de semillas, cultivo psicoactivo y no psicoactivo, y transformación de derivados para exportación y uso nacional.</div></div></div>
+    <div class="tc"><div class="tav c">JC</div><div><div class="tn">Jaime Camilo Hernández</div><div class="tr">Arquitecto · Director de Operaciones</div><div class="tb">Arquitecto y Director de Operaciones con especialización en sistemas de cultivo eficientes y cumplimiento de estándares de calidad internacionales aplicados a instalaciones de cannabis medicinal. Expertise en diseño, planificación y supervisión de infraestructuras de cultivo que integran requisitos técnicos, normativos y de buenas prácticas agrícolas para entornos regulados.</div></div></div>
+    <div class="tc"><div class="tav b">JS</div><div><div class="tn">Johan Alexis Sepúlveda Mora</div><div class="tr">Químico Farmacéutico</div><div class="tb">Director responsable con trayectoria en establecimientos farmacéuticos ambulatorios y hospitalarios. Expertise en normatividad de productos cosméticos, fitoterapéuticos y dispositivos médicos. Destacada experiencia en desarrollo y gestión de proyectos de cannabis medicinal y científico.</div></div></div>
+    <div class="tc"><div class="tav d">FC</div><div><div class="tn">Félix Ramón Clavijo Ortega</div><div class="tr">Consultor de Seguridad</div><div class="tb">Mayor (RA) Administrador Policial T.P. 1683. Miembro del Colegio de Mayores de la Policía Nacional. Consultor de Seguridad SVSP (Reg. No. 20184440060837) y Consultor en Seguridad Pública (Acred. No. 0132023). Especialista en protocolos de seguridad para instalaciones reguladas de cannabis.</div></div></div>
+  </div>
+  <button class="nb" onclick="gp('aceptar')">Aceptar propuesta →</button><div class="cf"></div>
+</div>
+
+<!-- ══════════ ACEPTAR ══════════ -->
+<div id="pg-aceptar" class="pane">
+  <div class="sh"><div class="sh-num">07</div><div class="sh-title">Aprobación de la Propuesta</div></div>
+  <div class="sh-div"></div>
+
+  <!-- PASO 1: SELECTOR DE OPCIÓN -->
+  <div id="step1">
+    <p style="font-size:13px;color:#555;line-height:1.7;margin-bottom:18px">Seleccione la modalidad con la que desea proceder:</p>
+    <div class="opt-sel">
+      <div class="opt-card" id="opt-a" onclick="selectOpt('a')">
+        <div class="opt-top">
+          <div><span class="opt-radio" id="radio-a"></span></div>
+          <div class="opt-ico">📋</div>
+          <div>
+            <div class="opt-title">Apruebo la propuesta completa</div>
+          </div>
+        </div>
+        <div class="opt-desc">Acepto los términos de la propuesta de licenciamiento e inicio el proceso de manera inmediata, una vez firmado el contrato y realizado el primer pago.</div>
+        <div class="opt-price">$40.000.000 + IVA</div>
+        <div class="opt-note">50% al aprobar · 25% al radicar · 25% al emitirse el acto administrativo</div>
+      </div>
+      <div class="opt-card" id="opt-b" onclick="selectOpt('b')">
+        <div class="opt-badge">Recomendado si hay dudas sobre el predio</div>
+        <div class="opt-top">
+          <div><span class="opt-radio" id="radio-b"></span></div>
+          <div class="opt-ico">🔍</div>
+          <div>
+            <div class="opt-title">Solicito primero el diagnóstico de viabilidad del predio</div>
+          </div>
+        </div>
+        <div class="opt-desc">Antes de iniciar el proceso de licenciamiento, solicito que LEGISLARTE realice el diagnóstico de viabilidad jurídica y técnica del predio. Si el predio resulta viable y contrato el licenciamiento dentro de los 5 meses, este valor se descuenta del primer pago.</div>
+        <div class="opt-price">$6.000.000 + IVA</div>
+        <div class="opt-note">Pago anticipado · Descuento aplicable si inicia licenciamiento en 5 meses</div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div id="form-area" style="display:none">
+      <div class="fw">
+        <div class="ftitle" id="form-title">Complete sus datos</div>
+        <div class="frow"><label class="flbl">Nombre completo del representante legal</label><input class="fi" id="fn" type="text" placeholder="Ej: Juan Carlos Rodríguez Pérez" oninput="vc()"></div>
+        <div class="frow"><label class="flbl">Empresa / Razón social</label><input class="fi" id="fe" type="text" placeholder="Ej: Green Valley SAS" oninput="vc()"></div>
+        <div class="frow"><label class="flbl">NIT o cédula</label><input class="fi" id="fnit" type="text" placeholder="Ej: 900.123.456-7" oninput="vc()"></div>
+        <div class="frow"><label class="flbl">Correo electrónico</label><input class="fi" id="fem" type="email" placeholder="Ej: contacto@empresa.com" oninput="vc()"></div>
+        <div class="frow"><label class="flbl">Teléfono de contacto</label><input class="fi" id="ft" type="text" placeholder="Ej: 300 123 4567" oninput="vc()"></div>
+
+        <div id="checks-a" style="display:none">
+          <div class="ck" onclick="tc('c1')"><input type="checkbox" id="c1" onchange="vc()"><div class="ck-t">He leído y comprendo el alcance completo. Entiendo que el servicio cubre el acompañamiento hasta la <strong>emisión del acto administrativo por el Ministerio de Justicia y del Derecho</strong> y que actuaciones posteriores requieren cotización separada.</div></div>
+          <div class="ck" onclick="tc('c2')"><input type="checkbox" id="c2" onchange="vc()"><div class="ck-t">Acepto los <strong>honorarios de $40.000.000 + IVA</strong> pagaderos en tres cuotas por hitos (50% / 25% / 25%) y me comprometo a realizarlos en los momentos establecidos.</div></div>
+          <div class="ck" onclick="tc('c3')"><input type="checkbox" id="c3" onchange="vc()"><div class="ck-t">Me obligo a suministrar información <strong>completa, oportuna, veraz y de origen lícito</strong>. Reconozco que la demora o inexactitud puede afectar los plazos del trámite.</div></div>
+          <div class="ck cr-bg" onclick="tc('c4')"><input type="checkbox" id="c4" onchange="vc()"><div class="ck-t">Certifico que el predio a licenciar está <strong>libre de gravámenes</strong> que afecten el dominio, no se encuentra en áreas restringidas y su uso de suelo permite el cultivo, o me comprometo a informar cualquier situación distinta a LEGISLARTE antes del inicio del trámite.</div></div>
+          <div class="ck" onclick="tc('c5')"><input type="checkbox" id="c5" onchange="vc()"><div class="ck-t">Entiendo que esta aprobación genera un <strong>contrato de prestación de servicios</strong> que será remitido para mi firma digital dentro de las siguientes <strong>24 horas hábiles</strong>.</div></div>
+          <button class="btn-ok" id="btn-a" disabled onclick="submit('a')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Aprobar propuesta completa y solicitar contrato
+          </button>
+        </div>
+
+        <div id="checks-b" style="display:none">
+          <div class="ck" onclick="tc('d1')"><input type="checkbox" id="d1" onchange="vc()"><div class="ck-t">Entiendo que el <strong>diagnóstico de viabilidad del predio</strong> es un servicio independiente al proceso de licenciamiento, con un costo de <strong>$6.000.000 + IVA pagaderos de forma anticipada</strong>.</div></div>
+          <div class="ck" onclick="tc('d2')"><input type="checkbox" id="d2" onchange="vc()"><div class="ck-t">Comprendo que si el predio resulta viable y contrato el proceso de licenciamiento con LEGISLARTE dentro de los <strong>cinco (5) meses</strong> siguientes a la entrega del informe, el valor pagado se <strong>descontará del primer pago</strong> del licenciamiento.</div></div>
+          <div class="ck" onclick="tc('d3')"><input type="checkbox" id="d3" onchange="vc()"><div class="ck-t">Acepto las condiciones del servicio de diagnóstico y me comprometo a suministrar la información del predio de forma <strong>completa y oportuna</strong>.</div></div>
+          <button class="btn-cr" id="btn-b" disabled onclick="submit('b')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="white" stroke-width="1.7" stroke-linecap="round"/></svg>
+            Solicitar diagnóstico de viabilidad del predio
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRATO / CONFIRMACIÓN -->
+  <div id="step2" class="contract-section">
+
+    <!-- VERSION A: CONTRATO COMPLETO -->
+    <div id="contract-a" style="display:none">
+      <div class="cs-head">
+        <div class="cs-icon">📄</div>
+        <div class="cs-title">Contrato de Prestación de Servicios</div>
+        <div class="cs-sub">Generado automáticamente con los datos suministrados · Ref. LEGIS-2026</div>
+      </div>
+
+      <div class="contract-box">
+        <div class="cb-title">Contrato de Prestación de Servicios Profesionales de Asesoría Legal en Cannabis</div>
+
+        <div class="cb-art"><div class="cb-art-title">Partes</div><p>Entre <strong>LEGISLARTE</strong>, representada por <strong>Luisa María Patiño Marulanda</strong>, abogada, con correo luisa@legislarte.co, en adelante <em>EL PRESTADOR</em>; y <strong id="cfe"></strong>, representada por <strong id="cfn"></strong>, identificado con NIT/Cédula <strong id="cfnit"></strong>, en adelante <em>EL CONTRATANTE</em>.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 1 · Objeto</div><p>EL PRESTADOR se obliga a prestar los servicios de asesoría legal, técnica y regulatoria para la obtención de una (1) licencia de cultivo de plantas de cannabis psicoactivo con fines medicinales, en las modalidades de fines industriales, investigación, fabricación de derivados y exportación, conforme al Decreto 811 de 2021 y demás normas concordantes, en los términos descritos en el Alcance del Servicio que forma parte integral de este contrato.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 2 · Alcance y límite</div><p>El presente contrato cubre el acompañamiento desde la constitución de la sociedad hasta la emisión del acto administrativo por parte del Ministerio de Justicia y del Derecho. No incluye actuaciones posteriores tales como solicitudes de cupos de siembra, modificaciones, renovaciones, recursos administrativos, acompañamiento contable o financiero. Cualquier actuación adicional deberá ser cotizada y contratada de forma independiente.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 3 · Honorarios y forma de pago</div>
+        <ul>
+          <li><strong>Total:</strong> $40.000.000 + IVA</li>
+          <li><strong>Primer pago (50%):</strong> $20.000.000 + IVA — al aprobarse la presente propuesta</li>
+          <li><strong>Segundo pago (25%):</strong> $10.000.000 + IVA — al radicar la solicitud ante el Ministerio</li>
+          <li><strong>Tercer pago (25%):</strong> $10.000.000 + IVA — al emitirse el acto administrativo de adjudicación</li>
+        </ul>
+        <p style="margin-top:6px">Los honorarios no incluyen costos de notaría, registro, tasas gubernamentales ni gastos de terceros, que serán asumidos directamente por EL CONTRATANTE.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 4 · Obligaciones de EL CONTRATANTE</div>
+        <ul>
+          <li>Suministrar información completa, oportuna, veraz y de origen lícito en respuesta a cada requerimiento de EL PRESTADOR.</li>
+          <li>Garantizar que el predio a licenciar está libre de gravámenes que afecten el dominio o la posesión del inmueble.</li>
+          <li>Certificar que el predio no se encuentra ubicado en áreas de restricción legal.</li>
+          <li>Verificar que el uso del suelo del predio permite el desarrollo de actividades de cultivo conforme al POT o instrumento de planeación aplicable.</li>
+          <li>Realizar los pagos en los términos y momentos establecidos.</li>
+        </ul></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 5 · Responsabilidad</div><p>EL PRESTADOR no será responsable por demoras, requerimientos adicionales o decisiones adversas del Ministerio de Justicia que sean consecuencia del incumplimiento de las obligaciones de EL CONTRATANTE, de información inexacta o incompleta suministrada por este, o de condiciones del predio que no hayan sido informadas oportunamente.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 6 · Confidencialidad</div><p>Las partes se comprometen a guardar la más estricta reserva sobre toda información confidencial involucrada en el presente proceso, absteniéndose de divulgarla por cualquier medio sin el previo consentimiento escrito de la otra parte.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Artículo 7 · Vigencia</div><p>El contrato entra en vigor a partir de la realización del primer pago y se extiende hasta la notificación de la emisión del acto administrativo correspondiente por parte del Ministerio de Justicia y del Derecho, o hasta el cumplimiento de todas las obligaciones a cargo de EL PRESTADOR.</p></div>
+
+        <div class="sign-row">
+          <div class="sign-box">
+            <div class="sign-label">EL PRESTADOR</div>
+            <div class="sign-name">Luisa María Patiño Marulanda</div>
+            <div class="sign-role">Directora Legal · LEGISLARTE</div>
+            <div class="sign-role">luisa@legislarte.co · 314 648 5794</div>
+            <div style="margin-top:24px;height:1px;background:rgba(0,62,71,0.2)"></div>
+            <div style="font-size:10px;color:#aaa;margin-top:4px">Firma</div>
+          </div>
+          <div class="sign-box">
+            <div class="sign-label">EL CONTRATANTE</div>
+            <div class="sign-name" id="sign-name"></div>
+            <div class="sign-role" id="sign-role"></div>
+            <div style="margin-top:24px;height:1px;background:rgba(0,62,71,0.2)"></div>
+            <div style="font-size:10px;color:#aaa;margin-top:4px">Firma</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-alert">
+        <div class="pa-head"><div class="pa-icon">⚠️</div><div class="pa-title">Importante: Primer pago requerido para iniciar</div></div>
+        <div class="pa-body">Para que LEGISLARTE pueda dar inicio formal al proceso de licenciamiento, es indispensable que se <strong>realice el primer pago de $20.000.000 + IVA</strong> dentro de los <strong>cinco (5) días hábiles siguientes</strong> a la firma del contrato. Sin la confirmación de este pago, no será posible iniciar el trabajo.<br><br>Una vez firmado el contrato y confirmado el pago, LEGISLARTE le remitirá los datos bancarios y la factura correspondiente.</div>
+      </div>
+
+      <div class="steps-box">
+        <p style="font-size:12px;font-weight:500;color:var(--tl);margin-bottom:12px">Pasos a seguir:</p>
+        <div class="cstep"><div class="csn">1</div><div>LEGISLARTE recibe la aprobación de la propuesta y prepara el contrato definitivo para firma digital.</div></div>
+        <div class="cstep"><div class="csn">2</div><div>El contrato es enviado al correo <strong id="mail-dest"></strong> para revisión y firma digital (DocuSign o equivalente).</div></div>
+        <div class="cstep"><div class="csn">3</div><div><strong>Primer pago: $20.000.000 + IVA</strong> dentro de los 5 días hábiles siguientes a la firma. Sin este pago no inicia el proceso.</div></div>
+        <div class="cstep"><div class="csn">4</div><div>LEGISLARTE inicia formalmente el trabajo y se pondrá en contacto para organizar la agenda de trabajo.</div></div>
+        <div class="cstep"><div class="csn cr">2</div><div><strong>Segundo pago: $10.000.000 + IVA</strong> al momento de la radicación formal de la solicitud ante el Ministerio.</div></div>
+        <div class="cstep"><div class="csn cr">3</div><div><strong>Tercer pago: $10.000.000 + IVA</strong> al emitirse el acto administrativo de adjudicación.</div></div>
+      </div>
+
+      <div style="text-align:center">
+        <a id="mail-a" class="btn-mail" href="#">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 3.5h10l-5 4-5-4z" stroke="white" stroke-width="1.2" fill="none" stroke-linejoin="round"/><rect x="1.5" y="3.5" width="10" height="7" rx="1" stroke="white" stroke-width="1.2" fill="none"/></svg>
+          Enviar aprobación a LEGISLARTE
+        </a>
+      </div>
+    </div>
+
+    <!-- VERSION B: DIAGNÓSTICO -->
+    <div id="contract-b" style="display:none">
+      <div class="cs-head" style="background:var(--cr)">
+        <div class="cs-icon">🔍</div>
+        <div class="cs-title">Solicitud de Diagnóstico de Viabilidad del Predio</div>
+        <div class="cs-sub">Servicio previo al proceso de licenciamiento · LEGIS-DIAG-2026</div>
+      </div>
+
+      <div class="contract-box">
+        <div class="cb-title">Orden de Servicio · Diagnóstico de Viabilidad de Predio para Licenciamiento de Cannabis</div>
+
+        <div class="cb-art"><div class="cb-art-title">Partes</div><p>Entre <strong>LEGISLARTE</strong>, representada por <strong>Luisa María Patiño Marulanda</strong>; y <strong id="dfe"></strong>, representada por <strong id="dfn"></strong>, identificado con NIT/Cédula <strong id="dfnit"></strong>.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Objeto</div><p>LEGISLARTE realizará el diagnóstico de viabilidad jurídica y técnica del predio indicado por EL CONTRATANTE para efectos del licenciamiento de cannabis psicoactivo bajo el Decreto 811 de 2021. El resultado será un <strong>informe escrito</strong> con conclusiones y recomendaciones sobre la viabilidad del predio.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Valor y forma de pago</div><p><strong>$6.000.000 + IVA</strong>, pagaderos de forma <strong>anticipada</strong>. El servicio inicia una vez confirmado el pago.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Descuento aplicable</div><p>Si el predio resulta viable para el licenciamiento y EL CONTRATANTE decide iniciar el proceso de licenciamiento con LEGISLARTE dentro de los <strong>cinco (5) meses</strong> siguientes a la entrega del informe de diagnóstico, el valor pagado por este servicio será <strong>descontado del primer pago</strong> de la propuesta de licenciamiento.</p></div>
+
+        <div class="cb-art"><div class="cb-art-title">Obligaciones de EL CONTRATANTE</div>
+        <ul>
+          <li>Suministrar la información completa y oportuna sobre el predio que LEGISLARTE requiera para el diagnóstico.</li>
+          <li>Facilitar el acceso a los documentos del predio (certificado de tradición y libertad, planos, POT, entre otros).</li>
+        </ul></div>
+
+        <div class="sign-row">
+          <div class="sign-box">
+            <div class="sign-label">LEGISLARTE</div>
+            <div class="sign-name">Luisa María Patiño Marulanda</div>
+            <div class="sign-role">Directora Legal · luisa@legislarte.co</div>
+            <div style="margin-top:24px;height:1px;background:rgba(0,62,71,0.2)"></div>
+            <div style="font-size:10px;color:#aaa;margin-top:4px">Firma</div>
+          </div>
+          <div class="sign-box">
+            <div class="sign-label">EL CONTRATANTE</div>
+            <div class="sign-name" id="dsign-name"></div>
+            <div class="sign-role" id="dsign-role"></div>
+            <div style="margin-top:24px;height:1px;background:rgba(0,62,71,0.2)"></div>
+            <div style="font-size:10px;color:#aaa;margin-top:4px">Firma</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-alert">
+        <div class="pa-head"><div class="pa-icon">⚠️</div><div class="pa-title">Pago anticipado requerido para iniciar el diagnóstico</div></div>
+        <div class="pa-body">El servicio de diagnóstico inicia <strong>únicamente una vez confirmado el pago de $6.000.000 + IVA</strong>. LEGISLARTE le remitirá los datos bancarios y la factura correspondiente dentro de las 24 horas hábiles siguientes a la recepción de esta solicitud.</div>
+      </div>
+
+      <div class="steps-box">
+        <p style="font-size:12px;font-weight:500;color:var(--tl);margin-bottom:12px">Pasos a seguir:</p>
+        <div class="cstep"><div class="csn cr">1</div><div>LEGISLARTE recibe la solicitud de diagnóstico y le remite la factura y los datos bancarios en las próximas 24 horas hábiles.</div></div>
+        <div class="cstep"><div class="csn cr">2</div><div><strong>Pago anticipado: $6.000.000 + IVA</strong>. El diagnóstico inicia únicamente al confirmarse el pago.</div></div>
+        <div class="cstep"><div class="csn cr">3</div><div>LEGISLARTE solicita la información del predio necesaria para el diagnóstico (documentos, certificados, planos).</div></div>
+        <div class="cstep"><div class="csn cr">4</div><div>Entrega del <strong>informe de viabilidad</strong> del predio con conclusiones y recomendaciones.</div></div>
+        <div class="cstep"><div class="csn">5</div><div>Si el predio es viable y decide iniciar el licenciamiento dentro de los 5 meses, los $6.000.000 se descuentan del primer pago del proceso de licenciamiento.</div></div>
+      </div>
+
+      <div style="text-align:center">
+        <a id="mail-b" class="btn-mail" style="background:var(--cr)" href="#">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 3.5h10l-5 4-5-4z" stroke="white" stroke-width="1.2" fill="none" stroke-linejoin="round"/><rect x="1.5" y="3.5" width="10" height="7" rx="1" stroke="white" stroke-width="1.2" fill="none"/></svg>
+          Enviar solicitud de diagnóstico a LEGISLARTE
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /step2 -->
+</div><!-- /pg-aceptar -->
+
+</div><!-- /wrap -->
+
+<script>
+const PAGES=['cover','intro','licencia','alcance','resp','honorarios','equipo','aceptar'];
+let selectedOpt=null;
+
+function gp(id){
+  PAGES.forEach(p=>{document.getElementById('pg-'+p).classList.toggle('show',p===id)});
+  document.querySelectorAll('.ntab').forEach((t,i)=>{t.classList.toggle('act',PAGES[i]===id)});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function selectOpt(o){
+  selectedOpt=o;
+  document.getElementById('opt-a').className='opt-card'+(o==='a'?' sel':'');
+  document.getElementById('opt-b').className='opt-card'+(o==='b'?' sel2':'');
+  document.getElementById('radio-a').className='opt-radio'+(o==='a'?' sel':'');
+  document.getElementById('radio-b').className='opt-radio'+(o==='b'?' sel':'');
+  document.getElementById('form-area').style.display='block';
+  document.getElementById('form-title').textContent=o==='a'?'Datos del representante legal — Propuesta completa':'Datos del representante legal — Diagnóstico de viabilidad';
+  document.getElementById('checks-a').style.display=o==='a'?'block':'none';
+  document.getElementById('checks-b').style.display=o==='b'?'block':'none';
+  vc();
+  document.getElementById('form-area').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function tm(card,id){
+  const det=document.getElementById(id);
+  const was=det.classList.contains('show');
+  document.querySelectorAll('.md').forEach(d=>d.classList.remove('show'));
+  document.querySelectorAll('.mc').forEach(c=>c.classList.remove('op'));
+  if(!was){det.classList.add('show');card.classList.add('op');}
+}
+
+function tc(id){
+  const cb=document.getElementById(id);
+  cb.checked=!cb.checked;
+  vc();
+}
+
+function vc(){
+  const base=document.getElementById('fn').value.trim()&&
+    document.getElementById('fe').value.trim()&&
+    document.getElementById('fnit').value.trim()&&
+    document.getElementById('fem').value.trim()&&
+    document.getElementById('ft').value.trim();
+  if(selectedOpt==='a'){
+    const ba=document.getElementById('btn-a');
+    if(ba) ba.disabled=!(base&&
+      document.getElementById('c1').checked&&
+      document.getElementById('c2').checked&&
+      document.getElementById('c3').checked&&
+      document.getElementById('c4').checked&&
+      document.getElementById('c5').checked);
+  } else if(selectedOpt==='b'){
+    const bb=document.getElementById('btn-b');
+    if(bb) bb.disabled=!(base&&
+      document.getElementById('d1').checked&&
+      document.getElementById('d2').checked&&
+      document.getElementById('d3').checked);
+  }
+}
+
+function submit(opt){
+  const nombre=document.getElementById('fn').value.trim();
+  const empresa=document.getElementById('fe').value.trim();
+  const nit=document.getElementById('fnit').value.trim();
+  const email=document.getElementById('fem').value.trim();
+  const tel=document.getElementById('ft').value.trim();
+
+  document.getElementById('step1').style.display='none';
+  document.getElementById('step2').classList.add('show');
+
+  if(opt==='a'){
+    document.getElementById('contract-a').style.display='block';
+    document.getElementById('contract-b').style.display='none';
+    document.getElementById('cfe').textContent=empresa;
+    document.getElementById('cfn').textContent=nombre;
+    document.getElementById('cfnit').textContent=nit;
+    document.getElementById('sign-name').textContent=nombre;
+    document.getElementById('sign-role').textContent=empresa+' · '+nit;
+    document.getElementById('mail-dest').textContent=email;
+    const sub=encodeURIComponent('Aprobación Propuesta Comercial LEGISLARTE 2026 – '+empresa);
+    const body=encodeURIComponent('Estimada Luisa,\n\nApruebo formalmente la Propuesta Comercial 2026 de LEGISLARTE para el proceso de licenciamiento de cannabis.\n\nDatos:\n• Nombre: '+nombre+'\n• Empresa: '+empresa+'\n• NIT/Cédula: '+nit+'\n• Correo: '+email+'\n• Teléfono: '+tel+'\n\nQuedo a la espera del contrato para firma y de los datos bancarios para el primer pago.\n\nCordialmente,\n'+nombre);
+    document.getElementById('mail-a').href='mailto:luisa@legislarte.co?subject='+sub+'&body='+body;
+  } else {
+    document.getElementById('contract-b').style.display='block';
+    document.getElementById('contract-a').style.display='none';
+    document.getElementById('dfe').textContent=empresa;
+    document.getElementById('dfn').textContent=nombre;
+    document.getElementById('dfnit').textContent=nit;
+    document.getElementById('dsign-name').textContent=nombre;
+    document.getElementById('dsign-role').textContent=empresa+' · '+nit;
+    const sub=encodeURIComponent('Solicitud Diagnóstico Viabilidad Predio – '+empresa);
+    const body=encodeURIComponent('Estimada Luisa,\n\nSolicito el servicio de Diagnóstico de Viabilidad del Predio de LEGISLARTE, previo al proceso de licenciamiento de cannabis.\n\nDatos:\n• Nombre: '+nombre+'\n• Empresa: '+empresa+'\n• NIT/Cédula: '+nit+'\n• Correo: '+email+'\n• Teléfono: '+tel+'\n\nQuedo a la espera de la factura y los datos bancarios para realizar el pago anticipado.\n\nCordialmente,\n'+nombre);
+    document.getElementById('mail-b').href='mailto:luisa@legislarte.co?subject='+sub+'&body='+body;
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
